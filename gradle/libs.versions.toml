@@ -1,0 +1,15 @@
+# https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format
+
+[versions]
+extra-java-module-info = "1.6"
+ch-fuzzle-gradle-semver = "1.0.0"
+kotlin-gradle-plugin = "1.9.20"
+junit-jupiter-engine = "5.10.0"
+
+[plugins]
+extra-java-module-info = { id = "org.gradlex.extra-java-module-info", version.ref = "extra-java-module-info" }
+ch-fuzzle-gradle-semver = { id = "ch.fuzzle.gradle.semver", version.ref = "ch-fuzzle-gradle-semver" }
+
+[libraries]
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin-gradle-plugin" }
+junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit-jupiter-engine" }
