@@ -63,13 +63,13 @@ and [common](./common) directly correspond to the JPMS
 modules [motive.wave.custom.lib](./lib/src/main/java/module-info.java)
 and [motive.wave.custom.common](./common/src/main/java/module-info.java).
 
-### MotiveWave SDK
+#### MotiveWave SDK
 
 The [JAR with the MotiveWave SDK](./lib/local-jars) was taken
 from [MotiveWave_Studies.zip](https://www.motivewave.com/support/sdk.htm). Since this JAR file is not yet a JPMS module,
 the [Extra Java Module Info Gradle plugin](https://github.com/gradlex-org/extra-java-module-info/tree/main) is employed
 to
-add module information to it, enabling its use in this modular Java project.
+add module information to it, enabling its use in this modular project.
 
 ### Gradle Version Catalog
 
