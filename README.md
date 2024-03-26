@@ -16,7 +16,7 @@ to change the package names from `com.examples.mw` to something more suitable.
 
 The project is set up for Kotlin. But you can use Java if you prefer, and you can even mix both languages. Just make
 sure that all Kotlin code goes in the `src/main/kotlin` source set and all Java code in `src/main/java`. At least this
-is what is stated on kotlinlang.org at the time of writing (2023):  
+is what is stated on kotlinlang.org at the time of writing (2024-03):  
 [Do not store Java .java files in the src/*/kotlin directory, as the .java files will not be compiled. Instead, you can use src/main/java.](https://kotlinlang.org/docs/gradle-configure-project.html#kotlin-and-java-sources)
 
 ### Deployment
@@ -38,7 +38,7 @@ MotiveWave's "Study" and "Strategy" menu.
 Project Organization and Dependencies
 -------------------------------------
 
-This Gradle project uses various modern technologies (as of 2023) to organize the build process and source code.
+This Gradle project uses various modern technologies (as of 2024) to organize the build process and source code.
 
 ### JPMS
 
@@ -48,8 +48,8 @@ Previously known as Project Jigsaw and introduced with Java 9, it facilitates pr
 The two JPMS modules in this project are [motive.wave.custom.lib](./lib/src/main/java/module-info.java)
 and [motive.wave.custom.common](./common/src/main/java/module-info.java).
 
-The "motive.wave.custom.lib" module has a dependency on the MotiveWave SDK and serves as the space for developing
-specific studies and strategies. The 'motive.wave.custom.common' module is designed for code that does not rely on the
+The `motive.wave.custom.lib` module has a dependency on the MotiveWave SDK and serves as the space for developing
+specific studies and strategies. The `motive.wave.custom.common` module is designed for code that does not rely on the
 MotiveWave SDK and can be reused across various studies or strategies. If necessary, additional modules can be added
 by essentially duplicating the "common" module.
 
@@ -63,13 +63,15 @@ and [common](./common) directly correspond to the JPMS
 modules [motive.wave.custom.lib](./lib/src/main/java/module-info.java)
 and [motive.wave.custom.common](./common/src/main/java/module-info.java).
 
-#### MotiveWave SDK
+Setting up a Gradle library project that uses JPMS and allows mixing Java and Kotlin code is not trivial. If you want to
+know more details you can have a look at [this project on GitHub](https://github.com/StaticNoiseLog/jpms-library).
+
+### MotiveWave SDK
 
 The [JAR with the MotiveWave SDK](./lib/local-jars) was taken
 from [MotiveWave_Studies.zip](https://www.motivewave.com/support/sdk.htm). Since this JAR file is not yet a JPMS module,
 the [Extra Java Module Info Gradle plugin](https://github.com/gradlex-org/extra-java-module-info/tree/main) is employed
-to
-add module information to it, enabling its use in this modular project.
+to add module information to it, enabling its use in this modular project.
 
 ### Gradle Version Catalog
 
@@ -88,7 +90,7 @@ enhances efficiency.
 
 The code for the single convention plugin used by this project can be found under [Gradle's buildSrc](./buildSrc). The
 structure of this Gradle project is so simple that using a convention plugin is a bit overkill. The reason for
-introducing it was to get rid of the following unexpected build warning produced by Gradle 8.5:  
+introducing it was to get rid of the following unexpected build warning produced by Gradle 8.7:  
 *The Kotlin Gradle plugin was loaded multiple times in different subprojects, which is not supported and may break the
 build.*
 

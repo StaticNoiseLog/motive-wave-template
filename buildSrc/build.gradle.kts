@@ -10,7 +10,8 @@ repositories {
 }
 
 dependencies {
-    // Makes the plugin org.jetbrains.kotlin.jvm available via the library org.jetbrains.kotlin:kotlin-gradle-plugin,
-    // whose version is declared in the version catalog (gradle/libs.versions.toml).
+    // Make the Gradle JVM plugin for Kotlin (org.jetbrains.kotlin.jvm) available by adding a dependency on the
+    // library org.jetbrains.kotlin:kotlin-gradle-plugin through the version catalog (gradle/libs.versions.toml).
+    // The version of the plugin is declared in the version catalog.
     implementation(libs.kotlin.gradle.plugin)
 }
