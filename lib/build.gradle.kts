@@ -10,6 +10,7 @@ plugins {
 
 dependencies {
     implementation(fileTree("local-jars") { include("*.jar") })
+    implementation(project(":common"))
     testImplementation(libs.kotlin.test.junit5) // JUnit 5 integration for Kotlin
     testRuntimeOnly(libs.junit.jupiter.engine) // JUnit 5 engine for running tests
     testRuntimeOnly(libs.junit.platform.launcher) // JUnit 5 support for IDEs and build tools

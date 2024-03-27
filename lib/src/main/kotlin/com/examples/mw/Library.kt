@@ -5,6 +5,7 @@ package com.examples.mw
 
 class Library {
     fun someLibraryMethod(): Boolean {
+        println(com.examples.mw.common.mymax(4, 5)) // use code from module "motive.wave.custom.common"
         return true
     }
 }
