@@ -43,11 +43,11 @@ tasks.jar {
 tasks {
     "build" {
         doLast {
-            logger.lifecycle("Publishing library as ${pathMotiveExtensions}${File.separator}$libraryName")
+            logger.lifecycle("Publishing library lib-${version}.jar as ${pathMotiveExtensions}${File.separator}$libraryName")
             copy {
                 from(rootProject.extra["archiveFile"])
                 into(pathMotiveExtensions)
-                rename("lib.jar", libraryName)
+                rename("lib-${version}.jar", libraryName)
             }
             // trigger reloading of library in MotiveWave by doing a "touch" on the .last_updated file
             val filePath = file("${pathMotiveExtensions}${File.separator}.last_updated")
